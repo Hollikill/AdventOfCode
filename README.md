@@ -1,20 +1,20 @@
 # AdventOfCode2019
 
-These are all of my advent of code 2019 files
+These are all of my [advent of code](https://adventofcode.com/) 2019 solutions
+
+Organized by Day, with both parts as a single or two files in a folder
 
 ## Days Completed
 
-Currently My Completions are:
+**1** - *Both*
 
-Day 1: Part 1 and 2
+**2** - *Both*
 
-Day 2: Part 1 and 2
+**3** - *Both*
 
-Day 3: Part 1 and 2
+**4** - *Both*
 
-Day 4: Part 1 and 2
-
-Day 5: Part 1 (changing data storage types)
+**5** - Working on *1*
 
 ## Other Files in Folders
 
