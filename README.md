@@ -18,4 +18,4 @@ Organized by Day, with both parts as a single or two files in a folder
 
 ### Other Files in Folders
 
-Some of the files are from the subreddit, for double checking purposes only. They are named with a 'Test Against' on the end of the file.
+Some of the files are from the [subreddit](https://www.reddit.com/r/adventofcode/), for double checking purposes only. They are named with a 'Test Against' on the end of the file.
