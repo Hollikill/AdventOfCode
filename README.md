@@ -1,4 +1,4 @@
-# AdventOfCode2019
+# Advent Of Code (2019)
 
 These are all of my [advent of code](https://adventofcode.com/) 2019 solutions
 
