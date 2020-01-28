@@ -17,8 +17,8 @@ Day 5: WIP Part 1
 # Other Files in Folders
 Some of the files are from the subreddit, for double checking purposes only. They will not be consistent with the naming scheme that i use for all of my files:
 
-DAY_NUMBER OF DAY_NUMBER OF PART
+DAY_NUMBER-OF-DAY_NUMBER-OF-PART
 
 or
 
-DAY_NUMBER OF DAY
+DAY_NUMBER-OF-DAY
