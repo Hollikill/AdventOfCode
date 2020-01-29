@@ -1,3 +1,5 @@
+![Advent of Code 2k19 Logo](https://pbs.twimg.com/media/EJmH5DbXsAUovnu.jpg)
+
 # Advent Of Code (2019)
 
 These are all of my [advent of code](https://adventofcode.com/) 2019 solutions
