@@ -1,4 +1,4 @@
-![Advent of Code 2k19 Logo](https://pbs.twimg.com/media/EJmH5DbXsAUovnu.jpg)
+![Advent of Code 2k19 Logo](https://i.imgur.com/kW2Tit2.png)
 
 # Advent Of Code (2019)
 
