@@ -1,23 +1,34 @@
-![Advent of Code 2k19 Logo](https://i.imgur.com/kW2Tit2.png)
+# Advent of Code with Hollister Ream!
 
-# Advent Of Code (2019)
+![Advent of Code Logo](https://raw.githubusercontent.com/Hollikill/AdventOfCode2019/master/Images/Icon.png)
 
-These are all of my [advent of code](https://adventofcode.com/) 2019 solutions
+## Advent of Code 2020
 
-Organized by Day, with both parts as a single or two files in a folder
+These are all of my [Advent of Code 2020](https://adventofcode.com/2020) & [Advent of Code 2019](https://adventofcode.com/2019) solutions
 
-### Days Completed
+Back again! Can't wait to beat the pulp out of my CS class peers... but probably not.
 
-**1** - *Both*
+### Days Completed in 2020
 
-**2** - *Both*
+- Day 1
 
-**3** - *Both*
+### Days Completed in 2019
 
-**4** - *Both*
+- Day 1
+  - Part 1
+  - Part 2
+- Day 2
+  - Part 1
+  - Part 2
+- Day 3
+  - Part 1
+  - Part 2
+- Day 4
+  - Part 1
+  - Part 2
+- Day 5
+  - Part 1
 
-**5** - Working on *1*
-
-### Other Files in Folders
+## Other Files in Folders
 
 Some of the files are from the [subreddit](https://www.reddit.com/r/adventofcode/), for double checking purposes only. They are named with a 'Test Against' on the end of the file.
