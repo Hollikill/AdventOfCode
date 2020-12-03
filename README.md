@@ -11,6 +11,11 @@ Back again! Can't wait to beat the pulp out of my CS class peers... but probably
 ### Days Completed in 2020
 
 - Day 1
+  - Part 1
+  - Part 2
+- Day 2
+  - Part 1
+  - Part 2
 
 ### Days Completed in 2019
 
