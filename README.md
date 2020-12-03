@@ -11,31 +11,31 @@ Back again! Can't wait to beat the pulp out of my CS class peers... but probably
 ### Days Completed in 2020
 
 - Day 1
-  - Part 1 ✅ c++
-  - Part 2 ✅ c++
+  - Part 1 c++ ✅
+  - Part 2 c++ ✅
 - Day 2
-  - Part 1 ✅ c++
-  - Part 2 ✅ c++
+  - Part 1 c++ ✅
+  - Part 2 c++ ✅
 - Day 3
-  - Part 1 ✅ c++
-  - Part 2 ✅ c++
+  - Part 1 c++ ✅
+  - Part 2 c++ ✅
 
 ### Days Completed in 2019
 
 - Day 1
-  - Part 1 ✅ java
-  - Part 2 ✅ java
+  - Part 1 java ✅
+  - Part 2 java ✅
 - Day 2
-  - Part 1 ✅ java
-  - Part 2 ✅ java
+  - Part 1 java ✅
+  - Part 2 java ✅
 - Day 3
-  - Part 1 ✅ java
-  - Part 2 ✅ java
+  - Part 1 java ✅
+  - Part 2 java ✅
 - Day 4
-  - Part 1 ✅ java
-  - Part 2 ✅ java
+  - Part 1 java ✅
+  - Part 2 java ✅
 - Day 5
-  - Part 1 ❌ java
+  - Part 1 java ❌
 
 ## Other Files in Folders
 
