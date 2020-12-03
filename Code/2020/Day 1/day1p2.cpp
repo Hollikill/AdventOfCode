@@ -16,8 +16,10 @@ int main () {
     }
     for (int x = 0; x < 200; x++) {
         for (int y = x; y < 200; y++) {
-            if ((arr[x] + arr[y]) == 2020) {
-                cout << (arr[x] * arr[y]);
+            for (int z = y; z < 200; z++) {
+                if ((arr[x] + arr[y] + arr[z]) == 2020) {
+                    cout << (arr[x] * arr[y] * arr[z]);
+                }
             }
         }
     }
