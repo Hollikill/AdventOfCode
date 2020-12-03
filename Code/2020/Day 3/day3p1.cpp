@@ -27,17 +27,7 @@ int main () {
         int loc =(x*3)%lnSize;
         if (total[x].at(loc) == '#') {
             trees++;
-            total[x] = total[x].substr(0,loc)+'X'+total[x].substr(loc+1);
         }
-        else {
-            total[x] = total[x].substr(0,loc)+'O'+total[x].substr(loc+1);
-        }
-    }
-
-    ofstream outfile;
-    outfile.open("output.txt");
-    for (int x = 0; x < i; x++) {
-        outfile << total[x] << endl;
     }
 
     cout << "trees: " << trees;

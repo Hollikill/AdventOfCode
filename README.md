@@ -8,6 +8,12 @@ These are all of my [Advent of Code 2020](https://adventofcode.com/2020 "Advent 
 
 Back again! Can't wait to beat the pulp out of my CS class peers... but probably not.
 
+📺 has some sort of visualization
+
+✅ done
+
+❌ work in progress
+
 ### Days Completed in 2020
 
 - Day 1
@@ -17,7 +23,7 @@ Back again! Can't wait to beat the pulp out of my CS class peers... but probably
   - Part 1 c++ ✅
   - Part 2 c++ ✅
 - Day 3
-  - Part 1 c++ ✅
+  - Part 1 c++ 📺
   - Part 2 c++ ✅
 
 ### Days Completed in 2019
