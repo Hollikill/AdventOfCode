@@ -3,10 +3,6 @@
 #include <string>
 using namespace std;
 
-// this code line is from this post https://stackoverflow.com/a/20170989
-template <typename T> std::string type_name();
-//type_name<decltype()>()
-
 int main () {
     ifstream infile;
     infile.open ("input.txt");
@@ -23,8 +19,8 @@ int main () {
             psprt+=" ";
             psprt+=c;
             temp = c;
-            if (temp == "") {
-                psprt+="                    ";
+            if (temp == "" || !infile.good()) {
+                psprt+="#########";
                 if (psprt.find(" byr:") == string::npos || psprt.find(" iyr:") == string::npos || psprt.find(" eyr:") == string::npos || psprt.find(" hgt:") == string::npos || psprt.find(" hcl:") == string::npos || psprt.find(" ecl:") == string::npos || psprt.find(" pid:") == string::npos) {
                     
                 }
@@ -49,16 +45,7 @@ int main () {
                     bool rule5 = true;
                     for (int i = 1; i < 7; i++) {
                         if (
-                        rule5str.at(i) != '0' &&
-                        rule5str.at(i) != '1' &&
-                        rule5str.at(i) != '2' &&
-                        rule5str.at(i) != '3' &&
-                        rule5str.at(i) != '4' &&
-                        rule5str.at(i) != '5' &&
-                        rule5str.at(i) != '6' &&
-                        rule5str.at(i) != '7' &&
-                        rule5str.at(i) != '8' &&
-                        rule5str.at(i) != '9' &&
+                        !isdigit(rule5str.at(i)) &&
                         rule5str.at(i) != 'a' &&
                         rule5str.at(i) != 'b' &&
                         rule5str.at(i) != 'c' &&
@@ -84,18 +71,7 @@ int main () {
                     string rule7str = psprt.substr(psprt.find(" pid:")+5,10);
                     bool rule7 = true;
                     for (int i = 0; i < 9; i++) {
-                        if (
-                        rule7str.at(i) != '0' &&
-                        rule7str.at(i) != '1' &&
-                        rule7str.at(i) != '2' &&
-                        rule7str.at(i) != '3' &&
-                        rule7str.at(i) != '4' &&
-                        rule7str.at(i) != '5' &&
-                        rule7str.at(i) != '6' &&
-                        rule7str.at(i) != '7' &&
-                        rule7str.at(i) != '8' &&
-                        rule7str.at(i) != '9'
-                        ) rule7 = false;
+                        if (!isdigit(rule7str.at(i))) rule7 = false;
                     }
                     if (rule7str.at(9) != ' ') rule7 = false;
                     
@@ -107,17 +83,7 @@ int main () {
                     rule5 &&
                     rule6 &&
                     rule7
-                    ) {
-                        //if (!rule1 || !rule2 || !rule3 || !rule4 || !rule5 || !rule6 || !rule7) cout << psprt << endl;
-                        //cout << "\t\tbyr{" << rule1str << "}" << endl;
-                        cout << "\t\tiyr{" << rule2str << "}" << endl;
-                        //cout << "\t\teyr{" << rule3str << "}" << endl;
-                        //cout << "\t\thgt{" << rule4str << "}" << endl;
-                        //cout << "\t\thcl{" << rule5str << "}" << endl;
-                        //cout << "\t\tecl{" << rule6str << "}" << endl;
-                        //cout << "\t\tpid{" << rule7str << "}" << endl;
-                        valid++;
-                    }
+                    ) valid++;
                 }
                 psprt="";
             }

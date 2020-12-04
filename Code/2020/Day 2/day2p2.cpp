@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 int main () {
@@ -7,42 +8,29 @@ int main () {
     infile.open ("input.txt");
     int valid = 0;
 
-    int min;
-    int max;
-    char necessaryC;
-    int temp;
-    char pre = ' ';
+    int pos1;
+    int pos2;
+    char letter;
+    string tmp;
 
     if (infile.is_open()) {
         while (infile.good()) {
-            char c[25];
-
-            infile.getline(c, 256, '-');
-            min = 0;
-            min = atoi(c);
-
-            infile.getline(c, 256, ' ');
-            max = 0;
-            max = atoi(c);
-            
-            infile.get(necessaryC);
-
-            infile.get();infile.get();
-            temp = 0;
-            while(pre != '\n') {
-                c[temp] += infile.get();
-                pre = infile.peek();
-                temp++;
-            }
+            char c[256];
             infile.getline(c, 256);
 
-            if ((c[--max] == necessaryC) != (c[--min] == necessaryC)) {
+            tmp = c;
+            pos1 = stoi( tmp.substr(0, tmp.find('-')) )-1;
+            pos2 = stoi( tmp.substr(tmp.find('-')+1, tmp.find(' ')))-1;
+            letter = tmp.at(tmp.find(' ')+1);
+
+
+            if ((c[pos2+tmp.find(':')+2] == letter) != (c[pos1+tmp.find(':')+2] == letter)) {
                 valid++;
             }
         }
     }
 
-    cout << "valid:" << valid-1;
+    cout << "valid:" << valid;
 
     return 0;
 }
