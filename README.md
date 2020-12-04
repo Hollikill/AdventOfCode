@@ -25,6 +25,9 @@ Back again! Can't wait to beat the pulp out of my CS class peers... but probably
 - Day 3
   - Part 1 c++ 📺
   - Part 2 c++ ✅
+- Day 4
+  - Part 1 c++ ✅
+  - Part 2 c++ ❌
 
 ### Days Completed in 2019
 
