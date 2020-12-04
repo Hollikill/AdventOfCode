@@ -32,17 +32,17 @@ int main () {
                     string rule1str = psprt.substr(psprt.find(" byr:")+5,4);
                     bool rule1 = 2003 > stoi(rule1str) && stoi(rule1str) > 1919;
                     string rule2str = psprt.substr(psprt.find(" iyr:")+5,4);
-                    bool rule2 = 2021 > stoi(rule1str) && stoi(rule2str) > 2009;
+                    bool rule2 = 2021 > stoi(rule2str) && stoi(rule2str) > 2009;
                     string rule3str = psprt.substr(psprt.find(" eyr:")+5,4);
-                    bool rule3 = 2031 > stoi(rule1str) && stoi(rule3str) > 2019;
+                    bool rule3 = 2031 > stoi(rule3str) && stoi(rule3str) > 2019;
 
-                    string rule4str = psprt.substr(psprt.find(" hgt:")+5,7);
+                    string rule4str = psprt.substr(psprt.find(" hgt:")+5,5);
                     bool rule4 = false;
-                    if (rule4str.find("in") != string::npos) {
-                        rule4 = 194 > stoi(rule4str.substr(0,rule4str.find("in"))) && stoi(rule4str.substr(0,rule4str.find("in"))) > 149;
+                    if (rule4str.find("cm") == 3) {
+                        if (194 > stoi(rule4str.substr(0,3)) && stoi(rule4str.substr(0,3)) > 149) rule4 = true;
                     }
-                    else if (rule4str.find("cm") != string::npos) {
-                        rule4 = 77 > stoi(rule4str.substr(0,rule4str.find("in"))) && stoi(rule4str.substr(0,rule4str.find("in"))) > 58;
+                    else if (rule4str.find("in") == 2) {
+                        if( 77 > stoi(rule4str.substr(0,2)) && stoi(rule4str.substr(0,2)) > 58) rule4 = true;
                     }
 
                     string rule5str = psprt.substr(psprt.find(" hcl:")+5,7);
@@ -81,22 +81,42 @@ int main () {
                     rule6str != "oth"
                     ) rule6 = false;
 
-                    string rule7str = psprt.substr(psprt.find(" ecl:")+5,9);
-                    bool rule7 = stoi(rule1str)%1 == 0;
+                    string rule7str = psprt.substr(psprt.find(" pid:")+5,10);
+                    bool rule7 = true;
+                    for (int i = 0; i < 9; i++) {
+                        if (
+                        rule7str.at(i) != '0' &&
+                        rule7str.at(i) != '1' &&
+                        rule7str.at(i) != '2' &&
+                        rule7str.at(i) != '3' &&
+                        rule7str.at(i) != '4' &&
+                        rule7str.at(i) != '5' &&
+                        rule7str.at(i) != '6' &&
+                        rule7str.at(i) != '7' &&
+                        rule7str.at(i) != '8' &&
+                        rule7str.at(i) != '9'
+                        ) rule7 = false;
+                    }
+                    if (rule7str.at(9) != ' ') rule7 = false;
                     
                     if (
                     rule1 &&
                     rule2 &&
                     rule3 &&
-                    //rule4 &&
+                    rule4 &&
                     rule5 &&
                     rule6 &&
                     rule7
                     ) {
+                        //if (!rule1 || !rule2 || !rule3 || !rule4 || !rule5 || !rule6 || !rule7) cout << psprt << endl;
+                        //cout << "\t\tbyr{" << rule1str << "}" << endl;
+                        cout << "\t\tiyr{" << rule2str << "}" << endl;
+                        //cout << "\t\teyr{" << rule3str << "}" << endl;
+                        //cout << "\t\thgt{" << rule4str << "}" << endl;
+                        //cout << "\t\thcl{" << rule5str << "}" << endl;
+                        //cout << "\t\tecl{" << rule6str << "}" << endl;
+                        //cout << "\t\tpid{" << rule7str << "}" << endl;
                         valid++;
-                    }
-                    else {
-                        cout << psprt << endl;
                     }
                 }
                 psprt="";
@@ -104,7 +124,7 @@ int main () {
         }
     }
 
-    cout << valid+1;
+    cout << valid;
 
     return 0;
 }
