@@ -2,11 +2,9 @@
 
 ![Advent of Code Logo](https://raw.githubusercontent.com/Hollikill/AdventOfCode2019/master/Images/Icon.png)
 
-## The Code
+These are all of my [Advent of Code 2020](https://adventofcode.com/2020 "Advent of Code 2020") & [2019](https://adventofcode.com/2019 "Advent of Code 2019") solutions.
 
-These are all of my [Advent of Code 2020](https://adventofcode.com/2020 "Advent of Code 2020") & [2019](https://adventofcode.com/2019 "Advent of Code 2019") solutions
-
-Back again! Can't wait to beat the pulp out of my CS class peers... but probably not.
+Back at it again! Can't wait to beat the pulp out of my CS class peers... but probably not. Either way, feel free to join my personal leaderboard at **723241-7203a7f2**.
 
 📺 has some sort of visualization
 
