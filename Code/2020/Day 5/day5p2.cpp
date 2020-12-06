@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 using namespace std;
 
 int main () {
@@ -7,6 +8,7 @@ int main () {
     infile.open ("input.txt");
 
     int topid = 0;
+    string allids;
 
     if (infile.is_open()) {
         string brdps = "";
@@ -68,12 +70,20 @@ int main () {
 
             int id = (r*8 + c);
             if (topid < id) topid = id;
+            allids += to_string(id) + '#';
 
             brdps="";
         }
     }
 
-    cout << topid;
+    //cout << allids;
+    for (int i = 1; i < topid; i++) {
+        int x=i-1;
+        int y=i+1;
+        if (allids.find(to_string(x)+"#") != string::npos && allids.find(to_string(y)+"#") != string::npos && allids.find(to_string(i)+"#") == string::npos) {
+            cout << i;
+        }
+    }
 
     return 0;
 }
