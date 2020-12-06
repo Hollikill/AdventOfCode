@@ -1,6 +1,6 @@
 # Advent of Code with Hollister Ream
 
-![Advent of Code Logo](https://raw.githubusercontent.com/Hollikill/AdventOfCode2019/master/Images/Icon.png)
+![Advent of Code Logo](https://raw.githubusercontent.com/Hollikill/AdventOfCode/master/Images/Icon.png)
 
 These are all of my [Advent of Code 2020](https://adventofcode.com/2020 "Advent of Code 2020") & [2019](https://adventofcode.com/2019 "Advent of Code 2019") solutions.
 
