@@ -3,51 +3,30 @@
 #include <string>
 using namespace std;
 
-string bagtypes (string bagrulesorg, string containedbag) {
-    string bagrules = bagrulesorg;
-    string containerbags = "";
-    bool containable = false;
-    while (!(bagrules.find("^"+containedbag) == string::npos || bagrules.find("^"+containedbag) > bagrulesorg.length())) {
-        containable = true;
-        while (bagrules.substr(1,bagrules.find("^"+containedbag)).find("#") != string::npos) {
-            bagrules = bagrules.substr(bagrules.substr(1).find("#")+2);
-        }
-        containerbags += "#" + bagrules.substr(0,bagrules.find("^"));
-        //cout << containedbag << " >> " << bagrules.substr(0,bagrules.find("^")) << endl;
-        bagrules = bagrules.substr(bagrules.find("^"+containedbag)+1+containedbag.length());
+bool bagtypes (string bagrulesorg, string containerbag) {
+    string containedbags = "";
+    string bagrules = "";
+    bagrules+=bagrulesorg;
+    if (bagrules.substr(bagrules.find("#"+containerbag)).find("#") != string::npos) {
+        containedbags = bagrules.substr(bagrules.find("#"+containerbag)+containerbag.length()+1);
     }
-    if (containable) {
-        string metacontainedbag = "";
-        metacontainedbag += containerbags;
-        while (containerbags.substr(1).find("#") != string::npos) {
-            metacontainedbag += bagtypes(bagrulesorg, containerbags.substr(1, containerbags.substr(1).find("#")));
-            containerbags = containerbags.substr(containerbags.substr(1).find("#")+1);
-        }
-        metacontainedbag += bagtypes(bagrulesorg, containerbags.substr(1));
-        
-        string tmpmetacontainedbag = "";
-        tmpmetacontainedbag += metacontainedbag;
-        int loc = 0;
-        while (tmpmetacontainedbag.substr(1).find("#") != string::npos) {
-            cout << tmpmetacontainedbag.substr(tmpmetacontainedbag.substr(1).find("#")+1) << endl;
-            if (tmpmetacontainedbag.substr(tmpmetacontainedbag.substr(1).find("#")+1).find(tmpmetacontainedbag.substr(0,tmpmetacontainedbag.substr(1).find("#")+1)) != string::npos) {
-                metacontainedbag = metacontainedbag.substr(0,loc) + metacontainedbag.substr(loc+tmpmetacontainedbag.substr(1).find("#")+1);
-                loc-=tmpmetacontainedbag.substr(1).find("#")+1;
-            }
-            loc+=tmpmetacontainedbag.substr(1).find("#")+1;
-            tmpmetacontainedbag = tmpmetacontainedbag.substr(tmpmetacontainedbag.substr(1).find("#")+1);
-        }
-        if (tmpmetacontainedbag.substr(tmpmetacontainedbag.substr(1).find("#")+1).find(tmpmetacontainedbag.substr(0,tmpmetacontainedbag.substr(1).find("#")+1)) != string::npos) {
-            metacontainedbag = metacontainedbag.substr(0,loc) + metacontainedbag.substr(loc+tmpmetacontainedbag.substr(1).find("#")+1);
-        }
-        loc+=tmpmetacontainedbag.substr(1).find("#")+1;
-        tmpmetacontainedbag = tmpmetacontainedbag.substr(tmpmetacontainedbag.substr(1).find("#")+1);
-
-        return metacontainedbag;
+    containedbags = bagrules.substr(bagrules.find("#"+containerbag)+containerbag.length()+1, bagrules.find("#"+containerbag)+bagrules.substr(bagrules.find("#"+containerbag)+1).find("#")+1);
+    if (containedbags.find("^shiny gold") != string::npos) {
+        return true;
+    }
+    else if (containedbags == "") {
+        return false;
     }
     else {
-        return "#"+containedbag;
+        bool returnval = false;
+        while (containedbags.substr(1).find("^") != string::npos) {
+            if (bagtypes(bagrulesorg, containedbags.substr(1,containedbags.substr(1).find("^")+1))) returnval = true;
+            containedbags = containedbags.substr(containedbags.substr(1).find("^")+1);
+        }
+        if (bagtypes(bagrulesorg, containedbags.substr(1))) returnval = true;
+        return returnval;
     }
+    return false;
 }
 
 int main () {
@@ -56,7 +35,7 @@ int main () {
 
     string bagrules = "";
 
-    if (infile.is_open()) {
+    if (infile.is_open()) { // read the data and put it in the format: #containing bag^contained bag^contained bag#containing bag^contained bag
         string bagrulestr = "";
         string tmpstr = "";
         while (infile.good()) {
@@ -97,18 +76,14 @@ int main () {
         }
     }
 
-    cout << "enter address:" << endl;
-    string targetbag = "shiny gold";
-    //in >> targetbag;
-    cout << endl;
-    string difbagstr = bagtypes(bagrules, targetbag);
     int difbags = 0;
-
-    while (difbagstr.find("#") != string::npos) {
-        difbags++;
-        difbagstr = difbagstr.substr(difbagstr.find("#")+1);
+    string bagrulescp = "";
+    bagrulescp += bagrules;
+    while (bagrulescp.substr(1).find("#") != string::npos) {
+        if (bagtypes(bagrules, bagrulescp.substr(1,bagrulescp.find("^"))))difbags++;
+        bagrulescp = bagrulescp.substr(bagrulescp.substr(1).find("#")+1);
     }
-
+    if (bagtypes(bagrules, bagrulescp.substr(1,bagrulescp.find("^"))))difbags++;
     cout << difbags;
 
     return 0;
